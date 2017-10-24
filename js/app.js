@@ -68,7 +68,8 @@ $("document").ready(function(){
 	
 	//创建item小方格
 	for(var i=1;i<=itemCount;i++){
-		$("div.items").append("<div class='item i"+i+"'>"+i+"</div>");
+	    $("div.items").append("<div class='item i" + i + "'>" + "<img src='http://wx.qlogo.cn/mmopen/GsX1ONUPcibszHP2Wpj4ichnictlPLUjMr6Lq2zwdico6ibpT14Y68BbbXYSfhsyoOLZ9E6uaPsr6m8jlWvTDdAGkwJ21OaUR0jvP/64'>" + "</div>");
+	    //$("div.items").append("<div class='item i" + i + "'>" + i + "</div>");
     }
 	//本地存储item宽度信息
 	if(localStorage.getItem("itemk")){
@@ -234,7 +235,7 @@ $("document").ready(function(){
                 localStorage.setItem("sequence",$(".ss").html()); 
 				$(".item.active").addClass("ignore");
 				$(".item.active").pulsate({
-					color: zzs,        //#98ff98
+				    color: zzs,        //#98ff98
 					repeat: 5
 				});
 			}else{
