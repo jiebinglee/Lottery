@@ -68,7 +68,7 @@ $("document").ready(function(){
 	
 	//创建item小方格
 	for(var i=1;i<=itemCount;i++){
-	    $("div.items").append("<div class='item i" + i + "'>" + "<img src='http://wx.qlogo.cn/mmopen/GsX1ONUPcibszHP2Wpj4ichnictlPLUjMr6Lq2zwdico6ibpT14Y68BbbXYSfhsyoOLZ9E6uaPsr6m8jlWvTDdAGkwJ21OaUR0jvP/64'>" + "</div>");
+	    $("div.items").append("<div class='item i" + i + "'>" + "<img style='max-width:100%;max-height:100%;' src='http://wx.qlogo.cn/mmopen/GsX1ONUPcibszHP2Wpj4ichnictlPLUjMr6Lq2zwdico6ibpT14Y68BbbXYSfhsyoOLZ9E6uaPsr6m8jlWvTDdAGkwJ21OaUR0jvP/0'>" + "</div>");
 	    //$("div.items").append("<div class='item i" + i + "'>" + i + "</div>");
     }
 	//本地存储item宽度信息
@@ -226,10 +226,25 @@ $("document").ready(function(){
                 }else{
                     r='<h2>恭喜您，抽得'+r+'！</h2>';
                 }
+
+
+                var win = $(".item.active").html();
+                var elem = $("#winimg").empty();
+                elem.append(win);
+                //var elem = document.getElementById('test');
+                //dialog({
+                //    content: elem,
+                //    id: 'EF893L'
+                //}).show();
+
+
                 var dd = dialog({
-                        title: '抽奖结果',
-                        content: r,
-                        okValue: '确定'
+                        title: '一等奖',
+                        content: elem,
+                        width: 460,
+                        height: 460,
+                        ok: function () { },
+                        okValue: '关闭'
                     });
                 dd.show();
                 localStorage.setItem("sequence",$(".ss").html()); 
